@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual Environment
+venv/
+.venv/
+env/
+.env/
+*.egg-info/
+
+# Django
+*.log
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+*.pot
+*.pyc
+*.pdb
+
+# MySQL
+*.sql
+
+# Local settings
+local_settings.py
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+
+# Misc
+*.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+
+# Coverage reports
+coverage.xml
+*.cover
+.hypothesis/
+.coverage
+.tox/
+.nox/
+.cache/
