@@ -25,7 +25,8 @@ SECRET_KEY = "django-insecure-6s6g!hh5pxks*5rv%scqdhn%euz-9l8)ju9jyc)t04k^l^vago
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -39,7 +40,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "rest_framework_simplejwt.token_blacklist",
+    "drf_yasg",
     "task",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -72,12 +75,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "task_backend.wsgi.application"
 
+AUTH_USER_MODEL = "users.CustomUser"
+
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",  # JWT auth
     ],
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticated",  # Ensure all views require authentication by default
+        "rest_framework.permissions.IsAuthenticated",  # Authenticated users only
     ],
 }
 
